@@ -1,0 +1,261 @@
+/*  */
+/* COMMON */
+body{
+  color: #333;
+  font-size: 16px;
+  font-weight: 400; /* 글자 두께  */
+  line-height: 1.4; /* 줄 높이  */
+  font-family: 'Nanum Gothic' sans-serif;
+}
+
+
+ul{
+  list-style: none;
+  padding-left: 0px;
+}
+
+
+img{
+  display: block; /* 상자처럼 취급 ...?  */
+}
+a{
+  text-decoration: none;
+}
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.btn{
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: .4s;
+}
+
+/* HEADER */
+
+
+header{
+  background-color: #f6f5f0;
+  border-bottom: 1px solid#c8c8c8;
+}
+header > .inner{
+  height: 120px;
+}
+header .logo{ /* 해더 수직 가운데 정렬 */
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+header .sub-menu{
+  position: absolute;
+  top: 10;
+  right: 0;
+  display: flex;
+}
+header .sub-menu ul{
+  /* ui 태그 특수기호 삭제 */
+  list-style: none;
+  padding-left: 0px; 
+}
+header .sub-menu ul.menu{
+  font-family: Arial, sans-serif;
+  display: flex; /* 수평정렬 */
+}
+header .sub-menu ul.menu li{
+  position: relative;
+}
+header .sub-menu ul.menu li::before{ /* 가상요소 선택자로 구분선 */ 
+  content: "";
+  display: block;
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu ul.menu li:first-child::before{ 
+  display: none;
+}
+
+header .sub-menu ul.menu li a{
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover{ /* 마우스가 올라가면 색이 변함 */
+  color: #000;
+}
+
+header .sub-menu .search{
+  padding: 10px;
+  height: 34px;
+  position: relative;
+}
+header .sub-menu .search input{
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s;
+}
+header .sub-menu .search input:focus{
+  width: 190px;
+  border-color: #669900;
+}
+header .sub-menu .search .material-icons{
+  padding: 10px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s; /* search 칸 천천히 줄어드는 기능 */
+}
+
+header .sub-menu .search.focused .material-icons{
+  opacity: 0; 
+}
+
+header .main-menu {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+}
+
+header .main-menu .item .item__name {
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+header .main-menu .item:hover .item__name {
+  background-color: #e5e5e5;
+  color: #669900;
+  border-radius: 6px 6px 0 0;
+}
+
+header .main-menu .item .item__contents {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: none;
+}
+
+header .main-menu .item:hover .item__contents {
+  display: block;
+}
+header .main-menu .item .item__contents .contents__menu {
+  background-color: #e5e5e5;
+  padding-bottom: 20px;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul {
+  display: flex;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li {
+  width: 220px;
+  position: relative;
+  
+}
+header .main-menu .item .item__contents .contents__menu > ul > li::before{ /* 가상요소 선택자로 구분선 */ 
+  content: "";
+  display: block;
+  width: 1px;
+  background-color: #888;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+  padding: 3px 0 3px 0;
+  font-size: 14px;
+  color: #333;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li{
+  padding: 5px 0;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+
+
+.notice .promotion{
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+}
+.notice .promotion .swiper-container{
+  width: calc(663px * 3 + 20px);
+  height: 380px;
+  padding-bottom: 100px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((663px * 3 + 20px)/-2);
+}
+
+.notice .promotion .swiper-slide {
+  opacity: .5;
+  transition: opacity 1s;
+  position: relative;
+}
+
+.notice .promotion .swiper-slide-active {
+  opacity: 1;
+}
+
+.notice .promotion .swiper-slide .btn{
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.notice .promotion .swiper-pagination{
+  bottom: 210px;
+  left: 0;
+  right: 0;
+}
+
+.last{
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  height: 70px;
+  background-color: #888;
+}
